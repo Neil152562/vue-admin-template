@@ -21,5 +21,5 @@ router.beforeEach((to, from, next) => {
 })
 // 跳转之后 - 后置守卫
 router.afterEach( (to,from) => {
-   
+   console.log();
 })
