@@ -35,8 +35,17 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    }
+    },
     // before: require('./mock/mock-server.js')
+    proxy: {
+      '/dev-api': {
+        target: 'http://ihrm-java.itheima.net',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/dev-api':'/api'
+        }
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
